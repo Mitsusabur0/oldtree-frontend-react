@@ -1,4 +1,5 @@
-@import '@/styles/variables.scss';
+@use "sass:color";
+@use '@/styles/variables.scss' as *;
 
 .dashboard {
   padding: $spacing-lg;
@@ -56,7 +57,7 @@
     }
 
     &:hover {
-      background-color: lighten($background-color, 2%);
+      background-color: color.adjust($background-color, $lightness: 2%);
     }
   }
 }
@@ -71,7 +72,7 @@
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: color.adjust($primary-color, $lightness: -10%);
   }
 }
 

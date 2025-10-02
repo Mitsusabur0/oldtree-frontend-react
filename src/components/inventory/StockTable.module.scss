@@ -1,5 +1,5 @@
-// @import '../../styles/variables.scss';
-@import '../../styles/variables.scss';
+@use "sass:color";
+@use '@/styles/variables.scss' as *;
 
 .stockTableContainer {
   overflow-x: auto;
@@ -35,7 +35,7 @@
     }
 
     &:hover {
-      background-color: lighten($background-color, 2%);
+      background-color: color.adjust($background-color, $lightness: 2%);
     }
   }
 }

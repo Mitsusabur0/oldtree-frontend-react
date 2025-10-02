@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { InventoryContext } from '../context/InventoryContext';
-import StatCard from '../../components/dashboard/StatCard';
+import StatCard from "@/components/dashboard/StatCard";
+import { getProductByVariantId, getVariantById, formatDateTime } from "@/utils/helpers";
 import styles from './Dashboard.module.scss';
-import { getProductByVariantId, getVariantById, formatDateTime } from '../../utils/helpers';
 
 const Dashboard = () => {
   const { 
