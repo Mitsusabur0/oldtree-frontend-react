@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+
+.movementLogTableContainer {
+  overflow-x: auto;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  background-color: $card-background;
+  box-shadow: $shadow-sm;
+}
+
+.movementLogTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $spacing-md;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    background-color: $background-color;
+    font-weight: 600;
+    color: $text-secondary;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+  }
+
+  tbody tr {
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($background-color, 2%);
+    }
+  }
+}

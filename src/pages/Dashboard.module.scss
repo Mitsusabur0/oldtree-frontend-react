@@ -1,0 +1,82 @@
+@import '@/styles/variables.scss';
+
+.dashboard {
+  padding: $spacing-lg;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.lowStockAlerts,
+.recentActivity {
+  background-color: $card-background;
+  padding: $spacing-lg;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  margin-bottom: $spacing-xl;
+
+  h2 {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-xl;
+  }
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: $spacing-md;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    background-color: $background-color;
+    font-weight: 600;
+    color: $text-secondary;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+  }
+
+  tbody tr {
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($background-color, 2%);
+    }
+  }
+}
+
+.actionButton {
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius-md;
+  background-color: $primary-color;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

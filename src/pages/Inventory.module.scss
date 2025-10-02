@@ -1,0 +1,61 @@
+@import '../styles/variables.scss';
+
+.inventoryPage {
+  padding: $spacing-lg;
+}
+
+.controlsContainer {
+  background-color: $card-background;
+  padding: $spacing-lg;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  margin-bottom: $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.controls {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $spacing-lg;
+  gap: $spacing-md;
+
+  button {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    background-color: $card-background;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background-color: $primary-color;
+      color: white;
+    }
+
+    &:disabled) {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .controlsContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls {
+    flex-direction: column;
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-xl;
+  border: 2px dashed $border-color;
+  border-radius: $border-radius-lg;
+  background-color: lighten($background-color, 2%);
+  color: $text-secondary;
+  text-align: center;
+  min-height: 200px;
+
+  p {
+    margin: 0;
+    font-size: $font-size-lg;
+  }
+}

@@ -1,0 +1,72 @@
+@import '../styles/variables.scss';
+
+.reportsPage {
+  padding: $spacing-lg;
+}
+
+.filtersContainer {
+  background-color: $card-background;
+  padding: $spacing-lg;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  margin-bottom: $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.filters {
+  display: flex;
+  gap: $spacing-md;
+
+  select {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    background-color: $card-background;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+}
+
+.summaryStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-lg;
+
+  .stat {
+    background-color: $card-background;
+    padding: $spacing-lg;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+
+    h4 {
+      margin: 0 0 $spacing-sm 0;
+      color: $text-secondary;
+    }
+
+    p {
+      margin: 0;
+      font-size: $font-size-xl;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .filtersContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    flex-direction: column;
+    width: 100%;
+  }
+}

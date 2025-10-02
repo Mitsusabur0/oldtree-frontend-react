@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.productRow {
+  .stockLevel {
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    font-weight: 600;
+
+    &.low {
+      background-color: rgba($danger-color, 0.1);
+      color: $danger-color;
+    }
+    &.medium {
+      background-color: rgba($warning-color, 0.1);
+      color: $warning-color;
+    }
+    &.high {
+      background-color: rgba($success-color, 0.1);
+      color: $success-color;
+    }
+  }
+
+  .lowStockBadge {
+    margin-left: $spacing-sm;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    background-color: $danger-color;
+    color: white;
+    font-size: $font-size-sm;
+    font-weight: 600;
+  }
+
+  .actionButton {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius-md;
+    background-color: transparent;
+    color: $primary-color;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}

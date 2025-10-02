@@ -1,0 +1,81 @@
+// @import '../../styles/variables.scss';
+@import '../../styles/variables.scss';
+
+.stockTableContainer {
+  overflow-x: auto;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  background-color: $card-background;
+  box-shadow: $shadow-sm;
+}
+
+.stockTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $spacing-md;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    background-color: $background-color;
+    font-weight: 600;
+    color: $text-secondary;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+  }
+
+  tbody tr {
+    &:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($background-color, 2%);
+    }
+  }
+}
+
+.emptyState {
+  padding: $spacing-lg;
+  text-align: center;
+  color: $text-secondary;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .stockTable {
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: $spacing-md;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-md;
+      padding: $spacing-md;
+    }
+
+    td {
+      display: block;
+      text-align: right;
+      border-bottom: none;
+      padding-left: 50%;
+      position: relative;
+
+      &::before {
+        content: attr(data-label);
+        position: absolute;
+        left: $spacing-md;
+        width: calc(50% - #{$spacing-md} * 2);
+        text-align: left;
+        font-weight: 600;
+        color: $text-primary;
+      }
+    }
+  }
+}

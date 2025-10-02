@@ -1,0 +1,81 @@
+@import '../../styles/variables.scss';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: $card-background;
+  padding: $spacing-lg;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  width: 100%;
+  max-width: 500px;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+  }
+
+  .formGroup {
+    margin-bottom: $spacing-md;
+
+    label {
+      display: block;
+      margin-bottom: $spacing-xs;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: $spacing-sm;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-md;
+    }
+  }
+
+  .stockInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+    padding: $spacing-sm;
+    background-color: $background-color;
+    border-radius: $border-radius-md;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-md;
+
+    button {
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $border-radius-md;
+      border: none;
+      cursor: pointer;
+
+      &[type="submit"] {
+        background-color: $primary-color;
+        color: white;
+
+        &:disabled {
+          background-color: $secondary-color;
+          cursor: not-allowed;
+        }
+      }
+
+      &[type="button"] {
+        background-color: $border-color;
+      }
+    }
+  }
+}

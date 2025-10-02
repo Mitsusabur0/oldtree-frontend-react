@@ -1,0 +1,40 @@
+.statCard {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: $border-radius-lg;
+  border: 1px solid $border-color;
+  box-shadow: $shadow-sm;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-right: 1.5rem;
+  color: $primary-color;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1rem;
+  color: $text-secondary;
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: $text-secondary;
+}
+
+.trend {
+  font-size: 1rem;
+  font-weight: 500;
+}

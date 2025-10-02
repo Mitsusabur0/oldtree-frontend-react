@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+
+.filterDropdown {
+  select {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    background-color: $card-background;
+    transition: border-color 0.2s;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+}
