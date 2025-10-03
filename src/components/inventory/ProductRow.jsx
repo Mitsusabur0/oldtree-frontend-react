@@ -17,21 +17,21 @@ const ProductRow = ({ item, onStockOperation }) => {
 
   return (
     <tr className={styles.productRow}>
-      <td data-label="Product Model">{product.model}</td>
-      <td data-label="Variant (Size/Color)">{variant.size} / {variant.color}</td>
-      <td data-label="Channel">{item.channel}</td>
-      <td data-label="Current Stock">
+      <td data-label="Modelo de Producto">{product.model}</td>
+      <td data-label="Variante (Talla/Color)">{variant.size} / {variant.color}</td>
+      <td data-label="Canal">{item.channel}</td>
+      <td data-label="Stock Actual">
         <span className={`${styles.stockLevel} ${styles[stockStatus]}`}>
           {item.quantity}
         </span>
-        {stockStatus === 'low' && <span className={styles.lowStockBadge}>Low Stock</span>}
+        {stockStatus === 'low' && <span className={styles.lowStockBadge}>Stock Bajo</span>}
       </td>
-      <td data-label="Actions">
+      <td data-label="Acciones">
         <button
           className={styles.actionButton}
           onClick={() => onStockOperation(item.variantId, item.channel)}
         >
-          Adjust Stock
+          Ajustar Stock
         </button>
       </td>
     </tr>

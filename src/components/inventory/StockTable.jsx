@@ -5,7 +5,7 @@ import styles from './StockTable.module.scss';
 
 const StockTable = ({ items, onStockOperation }) => {
   if (items.length === 0) {
-    return <EmptyState message="No products found." />;
+    return <EmptyState message="No se encontraron productos." />;
   }
 
   return (
@@ -13,11 +13,11 @@ const StockTable = ({ items, onStockOperation }) => {
       <table className={styles.stockTable}>
         <thead>
           <tr>
-            <th>Product Model</th>
-            <th>Variant (Size/Color)</th>
-            <th>Channel</th>
-            <th>Current Stock</th>
-            <th>Actions</th>
+            <th>Modelo de Producto</th>
+            <th>Variante (Talla/Color)</th>
+            <th>Canal</th>
+            <th>Stock Actual</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>

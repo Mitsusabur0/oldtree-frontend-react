@@ -22,26 +22,26 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
       <section className={styles.statsGrid}>
-        <StatCard title="Total Stock" value={totalStock} icon="📦" />
-        <StatCard title="Mercado Libre Stock" value={stockByChannel['Mercado Libre'] || 0} icon="🛒" />
-        <StatCard title="Website Stock" value={stockByChannel['Website'] || 0} icon="🌐" />
-        <StatCard title="B2B Stock" value={stockByChannel['B2B'] || 0} icon="🏢" />
-        <StatCard title="Low Stock Alerts" value={lowStockItems.length} icon="⚠️" />
-        <StatCard title="Recent Movements" value={movements.length} icon="🔄" />
+        <StatCard title="Stock Total" value={totalStock} icon="📦" />
+        <StatCard title="Stock Mercado Libre" value={stockByChannel['Mercado Libre'] || 0} icon="🛒" />
+        <StatCard title="Stock Website" value={stockByChannel['Website'] || 0} icon="🌐" />
+        <StatCard title="Stock B2B" value={stockByChannel['B2B'] || 0} icon="🏢" />
+        <StatCard title="Alerta de Stock bajo" value={lowStockItems.length} icon="⚠️" />
+        <StatCard title="Movimientos Recientes" value={movements.length} icon="🔄" />
       </section>
 
       <section className={styles.lowStockAlerts}>
-        <h2>Low Stock Alerts</h2>
+        <h2>Alertas de Stock Bajo</h2>
         {lowStockItems.length > 0 ? (
           <div className={styles.tableContainer}>
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Product</th>
-                  <th>Variant</th>
-                  <th>Channel</th>
-                  <th>Quantity</th>
-                  <th>Action</th>
+                  <th>Producto</th>
+                  <th>Variante</th>
+                  <th>Canal</th>
+                  <th>Cantidad</th>
+                  <th>Acción</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,7 +54,7 @@ const Dashboard = () => {
                       <td>{variant ? `${variant.size} / ${variant.color}` : 'N/A'}</td>
                       <td>{item.channel}</td>
                       <td>{item.quantity}</td>
-                      <td><button className={styles.actionButton}>Adjust Stock</button></td>
+                      <td><button className={styles.actionButton}>Ajustar Stock</button></td>
                     </tr>
                   );
                 })}
@@ -62,21 +62,21 @@ const Dashboard = () => {
             </table>
           </div>
         ) : (
-          <p>All stock levels are healthy! ✔️</p>
+          <p>Niveles de stock correcto.</p>
         )}
       </section>
 
       <section className={styles.recentActivity}>
-        <h2>Recent Activity</h2>
+        <h2>Actividad Reciente</h2>
         <div className={styles.tableContainer}>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Time</th>
-                <th>Product</th>
-                <th>Operation</th>
-                <th>Change</th>
-                <th>Channel</th>
+                <th>Hora</th>
+                <th>Producto</th>
+                <th>Operación</th>
+                <th>Cambio</th>
+                <th>Canal</th>
               </tr>
             </thead>
             <tbody>

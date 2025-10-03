@@ -40,13 +40,13 @@ const Sidebar = () => {
             <li>
               <NavLink to="/inventory" className={({ isActive }) => isActive ? styles.active : ''} onClick={() => setIsMobileOpen(false)}>
                 <span className={styles.icon}>📦</span>
-                <span className={styles.text}>Inventory</span>
+                <span className={styles.text}>Inventario</span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/reports" className={({ isActive }) => isActive ? styles.active : ''} onClick={() => setIsMobileOpen(false)}>
                 <span className={styles.icon}>📊</span>
-                <span className={styles.text}>Reports</span>
+                <span className={styles.text}>Reportes</span>
               </NavLink>
             </li>
           </ul>

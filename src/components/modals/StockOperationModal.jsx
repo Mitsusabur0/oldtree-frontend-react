@@ -35,22 +35,22 @@ const StockOperationModal = ({ isOpen, onClose, variantId, channel, currentStock
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h2>Adjust Stock</h2>
-        <p><strong>Product:</strong> {product?.model}</p>
-        <p><strong>Variant:</strong> {variant?.size} / {variant?.color}</p>
-        <p><strong>Channel:</strong> {channel}</p>
+        <h2>Ajustar Stock</h2>
+        <p><strong>Producto:</strong> {product?.model}</p>
+        <p><strong>Variante:</strong> {variant?.size} / {variant?.color}</p>
+        <p><strong>Canal:</strong> {channel}</p>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
-            <label>Operation Type</label>
+            <label>Tipo de Operación</label>
             <select value={operationType} onChange={(e) => setOperationType(e.target.value)}>
-              <option value="sale">Sale</option>
-              <option value="replenishment">Replenishment</option>
-              <option value="transfer">Transfer</option>
-              <option value="adjustment">Adjustment</option>
+              <option value="sale">Venta</option>
+              <option value="replenishment">Reabastecimiento</option>
+              <option value="transfer">Transferencia</option>
+              <option value="adjustment">Ajuste</option>
             </select>
           </div>
           <div className={styles.formGroup}>
-            <label>Quantity Change</label>
+            <label>Cambio de Cantidad</label>
             <input
               type="number"
               value={quantityChange}
@@ -58,16 +58,16 @@ const StockOperationModal = ({ isOpen, onClose, variantId, channel, currentStock
             />
           </div>
           <div className={styles.formGroup}>
-            <label>Notes</label>
+            <label>Notas</label>
             <textarea value={notes} onChange={(e) => setNotes(e.target.value)} />
           </div>
           <div className={styles.stockInfo}>
-            <p>Current Stock: {currentStock}</p>
-            <p>Projected Stock: {projectedStock}</p>
+            <p>Stock Actual: {currentStock}</p>
+            <p>Stock Proyectado: {projectedStock}</p>
           </div>
           <div className={styles.actions}>
-            <button type="button" onClick={onClose}>Cancel</button>
-            <button type="submit" disabled={!isValid}>Submit</button>
+            <button type="button" onClick={onClose}>Cancelar</button>
+            <button type="submit" disabled={!isValid}>Enviar</button>
           </div>
         </form>
       </div>

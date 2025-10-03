@@ -9,7 +9,7 @@ import styles from './Inventory.module.scss';
 const Inventory = () => {
   const { inventory, searchProducts, filterByChannel, updateStock } = useContext(InventoryContext);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedChannel, setSelectedChannel] = useState('All Channels');
+  const [selectedChannel, setSelectedChannel] = useState('Todos los canales');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,7 +43,7 @@ const Inventory = () => {
   const searchedVariantIds = new Set(searchedProducts.flatMap(p => p.variants.map(v => v.id)));
 
   const filteredInventory = inventory.filter(item => {
-    const channelMatch = selectedChannel === 'All Channels' || item.channel === selectedChannel;
+    const channelMatch = selectedChannel === 'Todos los canales' || item.channel === selectedChannel;
     const searchMatch = !searchTerm || searchedVariantIds.has(item.variantId);
     return channelMatch && searchMatch;
   });
@@ -51,15 +51,15 @@ const Inventory = () => {
   const totalPages = Math.ceil(filteredInventory.length / itemsPerPage);
   const paginatedInventory = filteredInventory.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
-  const channels = ['All Channels', ...new Set(inventory.map(i => i.channel))];
+  const channels = ['Todos los canales', ...new Set(inventory.map(i => i.channel))];
   const channelOptions = channels.map(c => ({ value: c, label: c }));
 
   return (
     <div className={styles.inventoryPage}>
       <div className={styles.controlsContainer}>
-        <h1>Inventory</h1>
+        <h1>Inventario</h1>
         <div className={styles.controls}>
-          <SearchBar onSearch={handleSearch} placeholder="Search products..." />
+          <SearchBar onSearch={handleSearch} placeholder="Buscar productos..." />
           <FilterDropdown
             options={channelOptions}
             selected={selectedChannel}
@@ -71,11 +71,11 @@ const Inventory = () => {
         <StockTable items={paginatedInventory} onStockOperation={handleStockOperation} />
         <div className={styles.pagination}>
           <button onClick={() => setCurrentPage(p => Math.max(p - 1, 1))} disabled={currentPage === 1}>
-            Previous
+            Anterior
           </button>
-          <span>Page {currentPage} of {totalPages}</span>
+          <span>Página {currentPage} de {totalPages}</span>
           <button onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))} disabled={currentPage === totalPages}>
-            Next
+            Siguiente
           </button>
         </div>
       </main>

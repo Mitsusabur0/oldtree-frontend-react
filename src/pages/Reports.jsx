@@ -42,38 +42,38 @@ const Reports = () => {
   return (
     <div className={styles.reportsPage}>
       <div className={styles.filtersContainer}>
-        <h1>Reports</h1>
+        <h1>Reportes</h1>
         <div className={styles.filters}>
           <select onChange={(e) => setDateRange(e.target.value)} value={dateRange}>
-            <option value="all">All Time</option>
-            <option value="today">Today</option>
-            <option value="7days">Last 7 Days</option>
-            <option value="30days">Last 30 Days</option>
+            <option value="all">Todo el tiempo</option>
+            <option value="today">Hoy</option>
+            <option value="7days">Últimos 7 días</option>
+            <option value="30days">Últimos 30 días</option>
           </select>
           <select onChange={(e) => setChannel(e.target.value)} value={channel}>
-            {channels.map(c => <option key={c} value={c}>{c === 'all' ? 'All Channels' : c}</option>)}
+            {channels.map(c => <option key={c} value={c}>{c === 'all' ? 'Todos los canales' : c}</option>)}
           </select>
           <select onChange={(e) => setOperationType(e.target.value)} value={operationType}>
-            {operationTypes.map(o => <option key={o} value={o}>{o === 'all' ? 'All Operations' : o}</option>)}
+            {operationTypes.map(o => <option key={o} value={o}>{o === 'all' ? 'Todas las operaciones' : o}</option>)}
           </select>
         </div>
       </div>
       <main>
         <div className={styles.summaryStats}>
           <div className={styles.stat}>
-            <h4>Total Movements</h4>
+            <h4>Movimientos Totales</h4>
             <p>{summaryStats.totalMovements}</p>
           </div>
           <div className={styles.stat}>
-            <h4>Stock Added</h4>
+            <h4>Stock Añadido</h4>
             <p>{summaryStats.stockAdded}</p>
           </div>
           <div className={styles.stat}>
-            <h4>Stock Removed</h4>
+            <h4>Stock Eliminado</h4>
             <p>{summaryStats.stockRemoved}</p>
           </div>
           <div className={styles.stat}>
-            <h4>Net Change</h4>
+            <h4>Cambio Neto</h4>
             <p>{summaryStats.netChange}</p>
           </div>
         </div>

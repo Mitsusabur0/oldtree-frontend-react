@@ -8,7 +8,7 @@ const MovementLogTable = ({ movements }) => {
   const { products } = useContext(InventoryContext);
 
   if (movements.length === 0) {
-    return <EmptyState message="No movements found." />;
+    return <EmptyState message="No se encontraron movimientos." />;
   }
 
   return (
@@ -16,14 +16,14 @@ const MovementLogTable = ({ movements }) => {
       <table className={styles.movementLogTable}>
         <thead>
           <tr>
-            <th>Date/Time</th>
-            <th>Product</th>
-            <th>Variant</th>
-            <th>Channel</th>
-            <th>Operation</th>
-            <th>Change</th>
-            <th>User</th>
-            <th>Notes</th>
+            <th>Fecha/Hora</th>
+            <th>Producto</th>
+            <th>Variante</th>
+            <th>Canal</th>
+            <th>Operación</th>
+            <th>Cambio</th>
+            <th>Usuario</th>
+            <th>Notas</th>
           </tr>
         </thead>
         <tbody>
