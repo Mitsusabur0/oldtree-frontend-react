@@ -69,7 +69,7 @@ const Reports = () => {
             <p>{summaryStats.stockAdded}</p>
           </div>
           <div className={styles.stat}>
-            <h4>Stock Eliminado</h4>
+            <h4>Stock Vendido/Eliminado</h4>
             <p>{summaryStats.stockRemoved}</p>
           </div>
           <div className={styles.stat}>

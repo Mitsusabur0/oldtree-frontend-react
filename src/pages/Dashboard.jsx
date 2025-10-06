@@ -23,9 +23,9 @@ const Dashboard = () => {
     <div className={styles.dashboard}>
       <section className={styles.statsGrid}>
         <StatCard title="Stock Total" value={totalStock} icon="📦" />
+        <StatCard title="Stock Distribución" value={stockByChannel['B2B'] || 0} icon="🏢" />
         <StatCard title="Stock Mercado Libre" value={stockByChannel['Mercado Libre'] || 0} icon="🛒" />
-        <StatCard title="Stock Website" value={stockByChannel['Website'] || 0} icon="🌐" />
-        <StatCard title="Stock B2B" value={stockByChannel['B2B'] || 0} icon="🏢" />
+        <StatCard title="Stock Website" value={stockByChannel['Sitio Web'] || 0} icon="🌐" />
         <StatCard title="Alerta de Stock bajo" value={lowStockItems.length} icon="⚠️" />
         <StatCard title="Movimientos Recientes" value={movements.length} icon="🔄" />
       </section>

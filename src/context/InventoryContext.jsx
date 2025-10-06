@@ -28,15 +28,19 @@ export const InventoryProvider = ({ children }) => {
     setLoading(true);
     setTimeout(() => {
       setInventory(prevInventory => {
-        const newInventory = [...prevInventory];
-        const itemIndex = newInventory.findIndex(i => i.variantId === variantId && i.channel === channel);
-
-        if (itemIndex > -1) {
-          newInventory[itemIndex].quantity += changeAmount;
-        } else {
+        const itemIndex = prevInventory.findIndex(i => i.variantId === variantId && i.channel === channel);
+        
+        // Check if the update has already been applied in this render cycle
+        if (itemIndex > -1 && prevInventory[itemIndex].quantity + changeAmount !== prevInventory[itemIndex].quantity) {
+          const newInventory = [...prevInventory];
+          newInventory[itemIndex] = { ...newInventory[itemIndex], quantity: newInventory[itemIndex].quantity + changeAmount };
+          return newInventory;
+        } else if (itemIndex === -1) {
+          const newInventory = [...prevInventory];
           newInventory.push({ id: `i${newInventory.length + 1}`, variantId, channel, quantity: changeAmount });
+          return newInventory;
         }
-        return newInventory;
+        return prevInventory;
       });
 
       const newMovement = {
@@ -51,7 +55,7 @@ export const InventoryProvider = ({ children }) => {
       };
       setMovements(prevMovements => [newMovement, ...prevMovements]);
       setLoading(false);
-    }, 1000);
+    }, 500); // A small delay to simulate network latency and debouncing
   };
 
   const getLowStockItems = () => {

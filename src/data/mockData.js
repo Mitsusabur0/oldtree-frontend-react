@@ -1,7 +1,7 @@
 export const products = [
   {
     id: "p1",
-    model: "Camiseta Clásica",
+    model: "Polera Lobo",
     category: "Prendas de Arriba",
     variants: [
       { id: "v1", size: "S", color: "Rojo" },
@@ -13,7 +13,7 @@ export const products = [
   },
   {
     id: "p2",
-    model: "Jeans Ajustados",
+    model: "Jeans Extra Baggy",
     category: "Prendas de Abajo",
     variants: [
       { id: "v6", size: "30", color: "Azul Oscuro" },
@@ -24,7 +24,7 @@ export const products = [
   },
   {
     id: "p3",
-    model: "Sudadera Premium",
+    model: "Hoodie Canguro",
     category: "Prendas de Arriba",
     variants: [
       { id: "v10", size: "M", color: "Gris" },
@@ -34,7 +34,7 @@ export const products = [
   },
   {
     id: "p4",
-    model: "Vestido de Verano",
+    model: "Jort Carpenter",
     category: "Vestidos",
     variants: [
       { id: "v13", size: "S", color: "Floral" },

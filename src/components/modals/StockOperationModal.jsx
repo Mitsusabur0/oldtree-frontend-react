@@ -13,6 +13,13 @@ const StockOperationModal = ({ isOpen, onClose, variantId, channel, currentStock
 
   const product = getProductByVariantId(products, variantId);
   const variant = getVariantById(products, variantId);
+  const isSaleDisabled = channel === 'Mercado Libre' || channel === 'Sitio Web';
+
+  useEffect(() => {
+    if (isSaleDisabled && operationType === 'sale') {
+      setOperationType('adjustment');
+    }
+  }, [isSaleDisabled, operationType]);
 
   useEffect(() => {
     const newProjectedStock = currentStock + quantityChange;
@@ -43,7 +50,7 @@ const StockOperationModal = ({ isOpen, onClose, variantId, channel, currentStock
           <div className={styles.formGroup}>
             <label>Tipo de Operación</label>
             <select value={operationType} onChange={(e) => setOperationType(e.target.value)}>
-              <option value="sale">Venta</option>
+              <option value="sale" disabled={isSaleDisabled}>Venta</option>
               <option value="replenishment">Reabastecimiento</option>
               <option value="transfer">Transferencia</option>
               <option value="adjustment">Ajuste</option>
